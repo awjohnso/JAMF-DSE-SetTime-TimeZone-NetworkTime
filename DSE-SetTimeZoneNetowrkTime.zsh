@@ -4,7 +4,8 @@
 # Organization: Stony Brook University/DoIT
 # 
 # This wjamf script will set the time server and timezone of the computer. Usually it is run
-# at first setup before binding to the AD in order to be sure the clocks are properly synched
+# at first setup before binding to the AD in order to be sure the clocks are properly synched.
+#
 # Pass the timeserver address or IP in the first paramater (Jamf = #4) and the timezone in 
 # the second paramater (Jamf - #5). For a list of timezones see the bottom of the script.
 # 
@@ -27,7 +28,7 @@ myTimeZone=${5}
 
 	# Get the script name.
 SCRIPT_NAME=$( /usr/bin/basename "${0}" )
-/bin/echo "$( /bin/date | /usr/bin/awk '{print $1, $2, $3, $4}' ) $( /usr/sbin/scutil --get LocalHostName ) $( /usr/bin/basename ${0} )[$$]: ${SCRIPT_NAME} - v2.00 ("`/bin/date`")" >> /var/log/jamf.log
+/bin/echo "$( /bin/date | /usr/bin/awk '{print $1, $2, $3, $4}' ) $( /usr/sbin/scutil --get LocalHostName ) $( /usr/bin/basename ${0} )[$$]: ${SCRIPT_NAME} - v2.10 ("`/bin/date`")" >> /var/log/jamf.log
 
 	# Check to see if the networktime is on.
 USENETWORKTIME=$( /usr/sbin/systemsetup -getusingnetworktime | /usr/bin/awk -F " " {'print $3'} )
