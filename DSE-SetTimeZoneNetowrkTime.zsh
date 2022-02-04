@@ -3,7 +3,7 @@
 # Author: Andrew W. Johnson
 # Organization: Stony Brook University/DoIT
 # 
-# This wjamf script will set the time server and timezone of the computer. Usually it is run
+# This Jamf script will set the time server and timezone of the computer. Usually it is run
 # at first setup before binding to the AD in order to be sure the clocks are properly synched.
 #
 # Pass the timeserver address or IP in the first paramater (Jamf = #4) and the timezone in 
